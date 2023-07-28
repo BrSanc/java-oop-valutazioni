@@ -27,13 +27,15 @@ public class Main {
         System.out.println();
 
         System.out.println("STUDENTI PROMOSSI: ");
+        int count = 0;
         for (Studente s: studentArray) {
-
             if (s.isPromosso() == true) {
                 studentiPromossi.add(s);
                 System.out.println(s);
+                count += 1;
             }
         }
+        System.out.println("Studenti promossi: " + count);
 
 
 

@@ -1,5 +1,7 @@
 package org.lessons.java.valutazioni;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import java.math.BigDecimal;
 
 public class Studente {
@@ -13,6 +15,13 @@ public class Studente {
         this.id = id;
         this.percentualeAssenze = percentualeAssenze;
         this.mediaVoti = mediaVoti;
+
+        if (percentualeAssenze < 0 || percentualeAssenze > 100){
+            throw new RuntimeException("La percentuale assenze deve essere tra 0 e 100");
+        }
+        if (mediaVoti <0 || mediaVoti > 5){
+            throw new RuntimeException("la media di voti deve essere tra 0 e 5");
+        }
     }
 
     //-------------Getter----------------------------
@@ -65,4 +74,5 @@ public class Studente {
                 promossoBocciato() +
                 '}';
     }
+
 }
